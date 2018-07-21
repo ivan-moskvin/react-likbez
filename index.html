@@ -104,7 +104,7 @@
     <pre>
         <code>$('header.header nav.menu ul li').hover(function(){</code>
         <code>	$(this).addClass('active')</code>
-        <code>},function(){</code>
+        <code>}, function(){</code>
         <code>	$(this).removeClass('active')</code>
         <code>})</code>
     </pre>
@@ -115,11 +115,9 @@
         <code>$('.menu__item').on('click', function (el) {</code>
         <code>  $(el).addClass('active')</code>
         <code>})</code>
-        <code>$('.menu__list').on('mouseenter', function(){</code>
-        <code>  foo.then(function(result){</code>
-        <code>      result.forEach(...);</code>
-        <code>      bar();</code>
-        <code>  })</code>
+        <code>$('.menu__list').on('mouseenter', function(result){</code>
+        <code>    result.forEach(...);</code>
+        <code>    bar();</code>
         <code>})</code>
         <code>$('.foo').on('click', function (el) {...});</code>
         <code>$('.bar').on('click', function (el) {...});</code>
