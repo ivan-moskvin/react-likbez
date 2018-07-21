@@ -90,7 +90,8 @@
 <section class="slide">
     <h2>Что давали</h2>
     <ol style="font-size: 40px;">
-        <li class="next">Относительно легкая манипуляция DOM <strong class="next">(нет)</strong></li>
+        <li class="next">Относительно легкая манипуляция DOM <strong class="next">(нет)</strong>
+        </li>
         <li class="next">AJAX</li>
         <li class="next">...</li>
     </ol>
@@ -111,81 +112,25 @@
     </pre>
 </section>
 <section class="slide">
-    <h2>"Удобный" AJAX</h2>
-    <pre class="columns two" style="font-size: 5px;">
-
-                <code>
-            if(modelID){
-            $.ajax({
-                url:'lib/ajaxData.php',
-                type: "POST",
-                data:{
-                    "action" : 'getsubmodels',
-                    "makeset_id" : makesetID,
-                    "yearset_id" : yearsetID,
-                    "model_id" : modelID
-                },
-                dataType: "html",
-                success:function(html){
-                    if (html) {
-
-                       // found a submodel
-                       $('#submodel').html(html);
-                     $('#submodel').on('change',function(){
-                        var submodelID = $(this).val();
-                        var yearsetID = $('#year').val();
-                        var makesetID = $('#make').val();
-                        var modelsetID = $('#model').val();
-                    $.ajax({
-                        type:'POST',
-                        url:'lib/ajaxData.php',
-                        data: {
-                            "action" : 'getbodytypes',
-                            "year": yearsetID,
-                            "make" : makesetID,
-                            "model" : modelsetID,
-                            "submodel" : submodelID
-                        },
-                        success:function(html){
-                </code>
-                <code>
-                                        // found a bodytype
-                                        if(html) {
-                                                $('#bodytype').html(html);
-
-                                                $('#bodytype').on('change',function(){
-                                                    //more dropdowns
-                                                }
-                                        }
-                                    }
-                                });
-                            });
-                    }else{
-                            //no submodel
-                            }
-                        }
-                    });
-                }else{
-                    $('.product').html('Select Some Values');
-                }
-            });
-                </code>
-            </pre>
+    <h2>Обработчики событий размножаются</h2>
+    <pre style="font-size: 12px;">
+        <code>$('.menu__item').on('click', function (el) {</code>
+        <code>  $(el).addClass('active')</code>
+        <code>})</code>
+        <code>$('.menu__list').on('mouseenter', function(){</code>
+        <code>  foo.then(function(result){</code>
+        <code>      result.forEach(...);</code>
+        <code>      bar();</code>
+        <code>  })</code>
+        <code>})</code>
+        <code>$('.foo').on('click', function (el) {...});</code>
+        <code>$('.bar').on('click', function (el) {...});</code>
+        <code>$('.baz').on('click', function (el) {...});</code>
+        <code>$('.foo__item').on('click', function (el) {...});</code>
+    </pre>
 </section>
 <section class="slide">
-    <h2>All kind of lists</h2>
-    <ol>
-        <li>Simple lists are marked with bullets</li>
-        <li>Ordered lists begin with a number</li>
-        <li>You can even nest lists one inside another
-            <ul>
-                <li>Or mix their types</li>
-                <li>But do not go too far</li>
-                <li>Otherwise audience will be bored</li>
-            </ul>
-        </li>
-        <li>Look, seven rows exactly!</li>
-    </ol>
+    <img width="40%" class="place" src="pictures/sad.png" alt="sad">
 </section>
 
 <section class="slide">
