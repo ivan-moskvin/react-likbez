@@ -114,7 +114,7 @@
 </section>
 <section class="slide">
     <h2>Обработчики событий размножаются</h2>
-    <pre style="font-size: 12px;">
+    <pre style="font-size: 16px;">
         <code>$('.menu__item').on('click', function (el) {</code>
         <code>  $(el).addClass('active')</code>
         <code>})</code>
@@ -129,7 +129,7 @@
     </pre>
 </section>
 <section class="slide">
-    <p class="shout">$, $$, конфликты</p>
+    <p class="place" style="font-size: 55px;">$, $$, конфликты</p>
 </section>
 <section class="slide">
     <img width="40%" class="place" src="pictures/sad.png" alt="sad">
@@ -150,14 +150,6 @@
     </style>
 </section>
 <section class="slide">
-    <h2>2013</h2>
-    <img width="70%" class="place" src="pictures/react-logo.svg" alt="" />
-</section>
-<section class="slide">
-    <h2>React - DYI</h2>
-    <img width="40%" style="margin-top:50px" class="place" src="pictures/toolbox.jpg" alt="toolbox">
-</section>
-<section class="slide">
     <h2>Добавилась куча удобностей</h2>
      <ul>
         <li>MVC</li>
@@ -165,6 +157,14 @@
         <li class="next">Тестирование (функционалка, юниты, TDD)</li>
         <li class="next"><strong>Декларативные интерфейсы</strong></li>
     </ul>
+</section>
+<section class="slide">
+    <h2>2013</h2>
+    <img width="70%" class="place" src="pictures/react-logo.svg" alt="" />
+</section>
+<section class="slide">
+    <h2>React - DYI</h2>
+    <img width="40%" style="margin-top:50px" class="place" src="pictures/toolbox.jpg" alt="toolbox">
 </section>
 <section class="slide">
     <h2>Состояние приложения (state)</h2>
@@ -186,7 +186,7 @@
 <section class="slide">
     <h2>Состояние → отображение</h2>
     <pre style="font-size: 14px;">
-        <code>class MyChildren extends React.Component() {</code>
+        <code>class MyChildren extends React.Component {</code>
         <code>    render(){</code>
         <code>        return(</code>
         <code>           &lt;nav className="children"&gt;</code>
@@ -202,21 +202,24 @@
     </pre>
 </section>
 <section class="slide">
-    <h2>2K18 way</h2>
-    <pre style="font-size: 14px;">
-        <code>const MyChildren = props => </code>
-        <code>           &lt;nav className="children"&gt;</code>
-        <code>               &lt;ul&gt;</code>
-        <strong><code>                 {props.userChildren.map(child =&gt; {</code>
-        <code>                    &lt;li&gt;{child.name}&lt;/li&gt;</code>
-        <code>                  })}</code></strong>
-        <code>               &lt;/ul&gt;</code>
-        <code>           &lt;/nav&gt;</code>
+    <h2>"Тупые" (презентационные) компоненты</h2>
+    <pre style="font-size: 18px;">
+        <code>const MyChildren = props => {</code>
+        <code>  return (</code>
+        <code>     &lt;nav className="children"&gt;</code>
+        <code>         &lt;ul&gt;</code>
+        <strong><code>           {props.userChildren.map(child =&gt; {</code>
+        <code>              &lt;li&gt;{child.name}&lt;/li&gt;</code>
+        <code>            })}</code></strong>
+        <code>         &lt;/ul&gt;</code>
+        <code>     &lt;/nav&gt;</code>
+        <code>  )</code>
+        <code>}</code>
     </pre>
 </section>
 <section class="slide">
     <h2>2К18 hipster way</h2>
-    <pre style="font-size: 14px;">
+    <pre style="font-size: 18px;">
         <code>const MyChildren = ({userChildren}) => </code>
         <code>         &lt;nav className="children"&gt;</code>
         <code>             &lt;ul&gt;<strong>{userChildren.map(({name}) =&gt; &lt;li&gt;{name}&lt;/li&gt; )};</strong>&lt;/ul&gt</code>
@@ -237,13 +240,12 @@
     }
     .hipster__item {
         display : flex;
-        height :150px;
+        height :140px;
     }
     </style>
 </section>
 <section class="slide">
-    <h2>JSX</h2>
-    <pre style="font-size: 30px;">
+    <pre style="font-size: 2vw;">
         <code>const Animal = () => &lt;div&gt;...&lt;/div&gt;</code>
     </pre>
     <div class="columns two">
@@ -251,13 +253,13 @@
             <div class="next" style="font-size: 50px;">JS?</div>
             <div class="next" style="font-size: 50px;">HTML?</div></figure>
         <figure>
-        <img src="pictures/shta.jpg" class="right next" width="100%  " alt=""></figure>
+        <img src="pictures/shta.jpg" class="right next" width="100%" alt=""></figure>
     </div>
 </section>
 <section class="slide">
     <h2>JSX</h2>
     <ul style="font-size: 30px;">
-        <li>Расширение JS</li>
+        <li class="next">Расширение JS</li>
         <li class="next">Позволяет писать разметку в JS <strong class="next">(не путать со смешиванием логики и визуала!)</strong></li>
         <li class="next">Это выражение</li>
         <li class="next">Возвращает элементы React</li>
@@ -265,41 +267,62 @@
     </ul>
 </section>
 <section class="slide">
-    <h2 class="shout">"React - новый PHP. Сиди и лабай, думать не надо"</h2>
-
-</section>
-<section class="slide"><img class="place" src="pictures/srsly.jpg" width="30%"></section>
-<section class="slide">
     <h2>React - не PHP</h2>
     <img src="pictures/not-php.png" alt="not-php" width="50%">
 </section>
 <section class="slide">
     <h2>React - не PHP</h2>
     <ul>
-        <li>React - не язык</li>
+        <li>Easy to learn, hard to master</li>
         <li class="next">Зачем ругать <b>инструмент</b>, если код пишут <b>программисты</b>?</li>
         <li class="next">Писать хорошо можно <b>на всём</b>.</li>
     </ul>
 </section>
 <section class="slide">
-    <h2>React - не PHP</h2>
-    <div class="columns two">
-    <ul style="font-size:40px">
-        <li>Twitter</li>
-        <li class="next">ok.ru</li>
-        <li class="next" style="font-size:50px; font-weight: bold;">Facebook</li>
-        <li class="next" style="font-size:50px; font-weight: bold;">vk.ru</li>
-    </ul>
-        <img class="next" width="100%" src="pictures/combo.jpg" alt="">
-        </div>
-</section>
-<section class="slide">
     <h2>Примеры, которые все знают:</h2>
-    <ul style="font-size:40px">
-        <li>Yandex карты</li>
-        <li>2gis</li>
-        <li>Jira</li>
-    </ul>
+    <div class="examples">
+        <ul class="examples__container">
+            <li class="examples__item"><img class="examples__image" src="pictures/facebook.png" alt=""></li>
+            <li class="examples__item"><img class="examples__image" src="pictures/yandex-maps.jpg" alt=""></li>
+            <li class="examples__item"><img class="examples__image" src="pictures/2gis.png" alt=""></li>
+
+        </ul>
+        <ul class="examples__container">
+            <li class="examples__item"><img class="examples__image" src="pictures/instagram.png" alt=""></li>
+            <li class="examples__item"><img class="examples__image" src="pictures/netflix.png" alt=""></li>
+            <li class="examples__item"><img class="examples__image" src="pictures/jira.jpg" alt=""></li>
+        </ul>
+        <ul class="examples__container">
+            <li class="examples__item"><img class="examples__image" src="pictures/uber.png" alt=""></li>
+            <li class="examples__item"><img class="examples__image" src="pictures/twitter.png" alt=""></li>
+            <li class="examples__item"><img class="examples__image" src="pictures/reddit.png" alt=""></li>
+        </ul>
+    </div>
+
+<style>
+    .examples {
+        display : flex;
+        flex-flow: row nowrap;
+        width : 100%;
+        height : 100%;
+    }
+    .examples__container {
+        display : flex;
+        width : 30%;
+        flex-flow : column nowrap;
+    }
+    .examples__item {
+        display : flex;
+        flex-flow: row nowrap;
+        align-items: center;
+        height : 25%;
+        margin-bottom: 3%;
+    }
+    .examples__image {
+        display : flex;
+        width : 30%;
+    }
+</style>
 </section>
 <section class="slide">
     <h2 class="shout">Вопросы?</h2>
