@@ -171,38 +171,75 @@
     <img width="40%" style="margin-top:50px" class="place" src="pictures/toolbox.jpg" alt="toolbox">
 </section>
 <section class="slide">
+    <h2>Умные компоненты (с состоянием)</h2>
+    <pre style="font-size: 20px;">
+        <code>class User extends React.Component {</code>
+        <strong>
+            <code>  state = {</code>
+            <code>    ...</code>
+            <code>  }</code>
+        </strong>
+        <code>  ...</code>
+        <code>}</code>
+    </pre>
+</section>
+<section class="slide">
+    <h2>Умные компоненты (с состоянием)</h2>
+    <pre style="font-size: 20px;">
+        <code>class User extends React.Component {</code>
+        <code>  state = {</code>
+        <code>    ...</code>
+        <code>  }</code>
+        <code>  </code>
+        <strong>
+            <code>  render() {</code>
+            <code>    return (...);</code>
+            <code>  }</code>
+        </strong>
+        <code>  ...</code>
+        <code>}</code>
+    </pre>
+</section>
+<section class="slide">
+    <h2>«Тупые» компоненты (без состояния)</h2>
+    <pre style="font-size: 25px;">
+        <code>const Menu = props => {</code>
+        <code>  return (</code>
+        <code>    ...</code>
+        <code>  );</code>
+        <code>}</code>
+    </pre>
+    <p class="note">* Еще их называют «презентационные»</p>
+</section>
+<section class="slide">
     <h2>Состояние приложения (state)</h2>
     <pre style="font-size:15px;">
-        <code>{</code>
+        <code>let userInfo = {</code>
         <code>  firstName: 'Alex',</code>
         <code>  birthDate: new Date('12.04.1982'),</code>
-        <code>  children: [</code>
-        <code>    {</code>
-        <code>       name: 'Sergey'</code>
-        <code>    },</code>
-        <code>    {</code>
-        <code>       name: 'Alena'</code>
-        <code>    },</code>
-        <code>  ],</code>
+        <strong><code>  children: [</code>
+                <code>    {</code>
+                <code>       name: 'Sergey'</code>
+                <code>    },</code>
+                <code>    {</code>
+                <code>       name: 'Alena'</code>
+                <code>    },</code>
+                <code>  ],</code>
+        </strong>
         <code>}</code>
     </pre>
 </section>
 <section class="slide">
     <h2>Состояние → отображение</h2>
-    <pre style="font-size: 14px;">
-        <code>class MyChildren extends React.Component {</code>
-        <code>    render(){</code>
-        <code>        return(</code>
-        <code>           &lt;nav className="children"&gt;</code>
-        <code>               &lt;ul&gt;</code>
-        <strong><code>                 {this.props.userChildren.map(child =&gt; {</code>
-        <code>                    &lt;li&gt;{child.name}&lt;/li&gt;</code>
-        <code>                  })}</code></strong>
-        <code>               &lt;/ul&gt;</code>
-        <code>           &lt;/nav&gt;</code>
-        <code>        );</code>
-        <code>    }</code>
+    <pre style="font-size: 20px;">
+        <code>class User extends React.Component {</code>
+        <code>  state = userInfo;</code>
+        <code>  render(){</code>
+        <code>    return (</code>
+        <code>      <strong>&lt;MyChildren children={this.state.children} /&gt;</strong></code>
+        <code>    );</code>
         <code>  }</code>
+        <code>}</code>
     </pre>
 </section>
 <section class="slide">
@@ -212,7 +249,7 @@
         <code>  return (</code>
         <code>     &lt;nav className="children"&gt;</code>
         <code>         &lt;ul&gt;</code>
-        <strong><code>           {props.userChildren.map(child =&gt; {</code>
+        <strong><code>           {props.children.map(child =&gt; {</code>
         <code>              &lt;li&gt;{child.name}&lt;/li&gt;</code>
         <code>            })}</code></strong>
         <code>         &lt;/ul&gt;</code>
@@ -224,9 +261,9 @@
 <section class="slide">
     <h2>2К18 hipster way</h2>
     <pre style="font-size: 18px;">
-        <code>const MyChildren = ({userChildren}) => </code>
+        <code>const MyChildren = ({children}) => </code>
         <code>         &lt;nav className="children"&gt;</code>
-        <code>             &lt;ul&gt;<strong>{userChildren.map(({name}) =&gt; &lt;li&gt;{name}&lt;/li&gt; )};</strong>&lt;/ul&gt</code>
+        <code>             &lt;ul&gt;<strong>{children.map(({name}) =&gt; &lt;li&gt;{name}&lt;/li&gt; )};</strong>&lt;/ul&gt</code>
         <code>         &lt;/nav&gt;</code>
     </pre>
     <div class="column hipster">
