@@ -171,7 +171,43 @@
     <img width="40%" style="margin-top:50px" class="place" src="pictures/toolbox.jpg" alt="toolbox">
 </section>
 <section class="slide">
-    <h2>Умные компоненты (с состоянием)</h2>
+    <h2>Философия</h2>
+    <table class="">
+        <tr>
+            <td><img src="pictures/components.jpeg" alt="" width="350px"></td>
+            <td><img src="pictures/declarative.jpeg" alt="" width="380px"></td>
+        </tr>
+    </table>
+</section>
+<section class="slide">
+    <h2>Компоненты</h2>
+    <pre class="place" style="font-size: 55px;">
+        <code>&lt;User /&gt;</code>
+    </pre>
+</section>
+<section class="slide">
+    <h2>Компоненты</h2>
+    <pre style="font-size: 35px;">
+        <code>
+        &lt;User
+          name={name}
+          birthDate={birthDate}
+        /&gt;
+        </code>
+    </pre>
+</section>
+<section class="slide">
+    <h2>Компоненты</h2>
+    <pre><code>
+        &lt;Catalog&gt;
+            &lt;Prices /&gt;
+            &lt;Filter /&gt;
+            &lt;CatalogItems /&gt;
+        &lt;/Catalog&gt;</code>
+    </pre>
+</section>
+<section class="slide">
+    <h2>Умные компоненты</h2>
     <pre style="font-size: 20px;">
         <code>class User extends React.Component {</code>
         <strong>
@@ -184,24 +220,23 @@
     </pre>
 </section>
 <section class="slide">
-    <h2>Умные компоненты (с состоянием)</h2>
+    <h2>Умные компоненты</h2>
     <pre style="font-size: 20px;">
         <code>class User extends React.Component {</code>
         <code>  state = {</code>
         <code>    ...</code>
         <code>  }</code>
-        <code>  </code>
         <strong>
             <code>  render() {</code>
             <code>    return (...);</code>
-            <code>  }</code>
+            <code>  }</code>ё
         </strong>
         <code>  ...</code>
         <code>}</code>
     </pre>
 </section>
 <section class="slide">
-    <h2>«Тупые» компоненты (без состояния)</h2>
+    <h2>«Тупые» компоненты</h2>
     <pre style="font-size: 25px;">
         <code>const Menu = props => {</code>
         <code>  return (</code>
