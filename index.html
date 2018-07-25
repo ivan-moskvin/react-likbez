@@ -63,7 +63,7 @@
 
 
 <section class="slide">
-    <h2>3000+ лет назад</h2>
+    <h2 class="next">3000+ лет назад</h2>
     <img width="70%" src="pictures/rome.jpg" alt="">
 </section>
 
@@ -166,9 +166,37 @@
     <h2>Как появился React <span class="next">(но это не точно)</span></h2>
     <img width="70%" class="place" src="pictures/issue.png" alt="" />
 </section>
-<section class="slide">
+<section class="slide diy">
     <h2>React - DIY</h2>
-    <img width="40%" style="margin-top:50px" class="place" src="pictures/toolbox.jpg" alt="toolbox">
+
+    <div class="diy__items">
+            <div class="diy__item">
+                <p>Angular</p>
+                <img src="pictures/combain.jpeg" alt="" width="350px">
+            </div>
+            <div class="diy__item">
+                <p style="position: absolute;top: 0%;">React</p>
+                <img src="pictures/toolbox.jpg" alt="" width="240px">
+            </div>
+        </div>
+    <style>
+        .diy__items {
+            display : flex;
+            flex-flow: row nowrap;
+        }
+        .diy__item {
+            position : relative;
+            width : 50%;
+        }
+        .diy p {
+            position : absolute;
+            top : 0;
+            width : 100%;
+        }
+        .diy img {
+            margin-top : 70px;
+        }
+    </style>
 </section>
 <section class="slide">
     <h2>Философия</h2>
@@ -178,6 +206,10 @@
             <td><img src="pictures/declarative.jpeg" alt="" width="380px"></td>
         </tr>
     </table>
+</section>
+<section class="slide">
+    <h2>React vs jQuery</h2>
+    <img style="width: 430px; margin-top: 50px;" class="place" src="pictures/jquery-style-vs-react-style.png" alt="" />
 </section>
 <section class="slide">
     <h2>Компоненты</h2>
@@ -321,13 +353,13 @@
     </style>
 </section>
 <section class="slide">
-    <pre style="font-size: 2vw;">
+    <pre style="font-size: 35px;">
         <code>const Animal = () => &lt;div&gt;...&lt;/div&gt;</code>
     </pre>
     <div class="columns two">
         <figure>
-            <div class="next" style="font-size: 50px;">JS?</div>
-            <div class="next" style="font-size: 50px;">HTML?</div></figure>
+            <div class="next" style="font-size: 35px;">JS?</div>
+            <div class="next" style="font-size: 35px;">HTML?</div></figure>
         <figure>
         <img src="pictures/shta.jpg" class="right next" width="100%" alt=""></figure>
     </div>
@@ -343,16 +375,65 @@
     </ul>
 </section>
 <section class="slide">
-    <h2>React - не PHP</h2>
-    <img src="pictures/not-php.png" alt="not-php" width="50%">
+    <h2>Экосистема</h2>
+    <div class="columns two eco">
+        <figure class="eco__item">
+            <img src="pictures/react-logo.svg" alt="" style="display: block;width: 100%;">
+        </figure>
+        <figure class="eco__item eco__plus">
+            <img src="pictures/redux.png" alt="" style="width: 200px;">
+            <img src="pictures/redux-saga.png" style="width: 400px; margin-top: 50px; ">
+        </figure>
+    </div>
+    <style>
+        .eco {
+            display : flex;
+            flex-flow: row nowrap;
+        }
+
+        .eco__item {
+            width : 50%;
+        }
+        .eco__plus {
+            display : flex;
+            flex-flow : column nowrap;
+        }
+    </style>
 </section>
 <section class="slide">
-    <h2>React - не PHP</h2>
+    <h2>Redux</h2>
+    <img src="pictures/redux-flow.png" style="width: 700px; margin-top: 50px;" class="place">
+</section>
+<section class="slide">
+    <h2>Redux - saga</h2>
+    <img src="pictures/redux-saga-flow.jpg" style="width: 700px; margin-top: 50px;" class="place">
+</section>
+<section class="slide">
+    <h2>Showtime!</h2>
+    <img class="place bottom" src="pictures/bender.webp" width="350px" alt="">
+</section>
+<section class="slide drawbacks">
+    <h2>Да ладно!?</h2>
     <ul>
-        <li>Easy to learn, hard to master</li>
-        <li class="next">Зачем ругать <b>инструмент</b>, если код пишут <b>программисты</b>?</li>
-        <li class="next">Писать хорошо можно <b>на всём</b>.</li>
+        <li class="next">Сложность конфига
+
+        </li>
+        <li class="next">DIY → нужно собирать самому</li>
     </ul>
+    <div class="next columns two">
+        <img src="pictures/create-react-app.png" style="width: 300px;">
+        <img src="pictures/webpack.png" style="width: 400px;">
+    </div>
+    <style>
+        .drawbacks,.drawbacks ul li
+        {
+            font-size : 35px;
+        }
+    </style>
+</section>
+<section class="slide">
+    <h2>Нужно знать JS</h2>
+    <img src="pictures/tenor.gif" class="place" style="width: 600px; margin-top: 50px;" alt="">
 </section>
 <section class="slide">
     <h2>Примеры, которые все знают:</h2>
