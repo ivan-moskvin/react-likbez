@@ -21,7 +21,12 @@ module.exports = {
       "./**/*.css",
       "./**/*.js"
     ],
-    "server" : true,
+    "server" : {
+        "baseDir": "./",
+        "routes": {
+            "/connection": "./examples/connection/index.html",
+        }
+    },
     "watchEvents": [
         "add",
         "change"
