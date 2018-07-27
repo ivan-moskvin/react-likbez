@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+// import fetchCats from './catSearch';
 import logo from './logo.svg';
 import './App.css';
 

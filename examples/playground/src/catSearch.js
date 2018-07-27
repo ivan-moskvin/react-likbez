@@ -1,4 +1,4 @@
-export default function getCats (keyword, page = 1) {
+export default function fetchCats (keyword, page = 1) {
     const apiKey = '9df9f716c535e20573c4d5fc7336e3c6'
     return fetch(
       'https://api.flickr.com/services/rest/' +
